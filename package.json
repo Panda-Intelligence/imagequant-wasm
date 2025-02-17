@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "module": "index.ts",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Panda-Intelligence/imagequant-wasm.git"
+  },
   "scripts": {
     "build": "wasm-pack build --target web --release",
     "test": "bun test src/__tests__"
@@ -19,5 +23,8 @@
     "crc-32": "^1.2.2",
     "pako": "^2.1.0",
     "pngjs": "^7.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
