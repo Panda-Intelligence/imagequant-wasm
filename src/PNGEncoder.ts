@@ -75,7 +75,7 @@ export class PNGEncoder {
     // Add filter bytes（Append 0x00 each line）
     const filtered = new Uint8Array(indices.length + height);
     for (let y = 0; y < height; y++) {
-      filtered[y * (width + 1)] = 0; // 过滤类型：无
+      filtered[y * (width + 1)] = 0; // filter type: none
       filtered.set(
         indices.subarray(y * width, (y + 1) * width),
         y * (width + 1) + 1
@@ -83,7 +83,10 @@ export class PNGEncoder {
     }
 
     // use `pako` for zlib compress
-    const compressed = pako.deflate(filtered, { level: 9, memLevel: 9 });
+    const compressed = pako.deflate(filtered, {
+      level: 9,
+      memLevel: 9,      // max memory usage
+    });
     return this.#buildChunk('IDAT', compressed);
   }
 
