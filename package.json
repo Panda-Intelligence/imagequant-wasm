@@ -1,20 +1,37 @@
 {
   "name": "@panda-ai/imagequant",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "module": "index.ts",
   "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Panda-Intelligence/imagequant-wasm.git"
   },
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "package.json",
+    "Cargo.toml",
+    "imagequant_wasm_bg.wasm",
+    "imagequant_wasm.js",
+    "imagequant_wasm.d.ts"
+  ],
   "scripts": {
-    "build": "wasm-pack build --target web --release",
+    "build:ts": "tsc",
+    "build:wasm": "wasm-pack build --target web --release",
+    "build": "concurrently \"bun run clean\" \"bun run build:*\"",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build",
     "test": "bun test src/__tests__"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/pako": "^2.0.3",
-    "@types/pngjs": "^6.0.5"
+    "@types/pngjs": "^6.0.5",
+    "concurrently": "^9.1.2",
+    "rimraf": "^6.0.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

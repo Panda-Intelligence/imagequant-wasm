@@ -1,0 +1,38 @@
+.*
+!.gitignore
+!.npmignore
+!.editorconfig
+
+# Build
+node_modules/
+.*cache/
+*.log
+npm-debug.log*
+
+# Test
+test/
+tests/
+coverage/
+__tests__/
+*.spec.js
+*.test.js
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Doc
+examples/
+docs/
+CHANGELOG.md
+
+build/
+dist/unminified/
+
+# OS
+.DS_Store
+Thumbs.db
+
+src/
+target/
