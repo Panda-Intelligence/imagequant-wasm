@@ -13,6 +13,8 @@
     // Bundler mode
     "moduleResolution": "bundler",
     "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
     // Best practices
     "strict": true,
     "skipLibCheck": true,
@@ -20,15 +22,6 @@
     // Some stricter flags (disabled by default)
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false,
-    "outDir": "dist",
-    "rootDir": "."
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "__tests__"
-  ]
+    "noPropertyAccessFromIndexSignature": false
+  }
 }

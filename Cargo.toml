@@ -1,6 +1,6 @@
 [package]
-name = "imagequant-wasm"
-version = "0.1.0"
+name = "imagequant"
+version = "0.2.0"
 edition = "2021"
 description = "imagequant wasm port for png compress in JavaScript runtime"
 license = "MIT"
@@ -16,3 +16,6 @@ imagequant = { version = "4.3.4", default-features = false }
 
 [target.wasm32-unknown-unknown]
 rustflags = ["-C", "target-feature=+simd128", "-C", "opt-level=3"]
+
+[package.metadata.wasm-pack]
+name = "@panda-ai/imagequant"

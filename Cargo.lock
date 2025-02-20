@@ -28,6 +28,15 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
 name = "imagequant"
+version = "0.2.0"
+dependencies = [
+ "imagequant 4.3.4",
+ "js-sys",
+ "wasm-bindgen",
+]
+
+[[package]]
+name = "imagequant"
 version = "4.3.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1cede25dbe6a6c3842989fa341cba6e2a4dc33ba12a33f553baeed257f965cb5"
@@ -35,15 +44,6 @@ dependencies = [
  "arrayvec",
  "once_cell",
  "rgb",
-]
-
-[[package]]
-name = "imagequant-wasm"
-version = "0.1.0"
-dependencies = [
- "imagequant",
- "js-sys",
- "wasm-bindgen",
 ]
 
 [[package]]
